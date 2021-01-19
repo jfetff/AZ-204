@@ -1,6 +1,8 @@
-### AZ-204: Developing Solutions for Microsoft Azure
+# AZ-204: Developing Solutions for Microsoft Azure
 
-### Módulos y Demos del Módulo Developing Solutions for Microsoft Azure para ser concluido al 20 de Enero de 2021. 
+## Módulos y Demos del Módulo Developing Solutions for Microsoft Azure para ser concluido al 20 de Enero de 2021. 
+
+---
 
 ## Que es lo que hacemos?
 
