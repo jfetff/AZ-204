@@ -4,7 +4,7 @@
 
 ## Que es lo que hacemos?
 
-Este es un repositorio con todos los labs y MOC que cubren el estudio de la certificación sobre el Desarrollo para las Soluciones de Microsoft de Azure:  [AZ-204: Developing Solutions for Microsoft Azure](https://www.microsoft.com/learning/en-us/course.aspx?ID=20486)
+Este es un repositorio con todos los labs y MOC que cubren el estudio de la certificación sobre el Desarrollo para las Soluciones de Microsoft de Azure:  [AZ-204: Developing Solutions for Microsoft Azure](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure)
 
 Cada Módulo contiene un README para la descripción de lo que se pide en cada módulo y MOC así como los ejercicios que describen cada uno de los correspondiente.
 
