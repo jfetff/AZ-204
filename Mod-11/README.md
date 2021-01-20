@@ -60,12 +60,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  Create a new **Azure SQL Database server (logical server)** resource with the following details:
 
-![alt text](images/Fig-1.jpg "Seleccionando el servidor ")
+![alt text](./Images/Fig-1.jpg "Seleccionando el servidor ")
     -   Server name: **polysqlsrvr*[yourname]***
        
     -   New resource group: **PolyglotData**
 
-![alt text](images/Fig-2.jpg "Seleccionando el servidor ") 
+![alt text](./Images/Fig-2.jpg "Seleccionando el servidor ") 
 
     -   Server admin login: **testuser**
 
@@ -73,7 +73,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     -   Location: **(US) East US**
 
-![alt text](images/Fig-3.jpg "Seleccionando el servidor ") 
+![alt text](./Images/Fig-3.jpg "Seleccionando el servidor ") 
     -   Allow Azure services to access server: **Yes**
 
     > **Note**: At this point in the lab, we are only creating the Azure SQL logical server. We will create the Azure SQL database instance later in the lab.
@@ -83,7 +83,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 #### Task 3: Create an Azure Cosmos DB account resource
 
 1.  Create a new **Azure Cosmos DB** instance with the following details:
-![alt text](images/Fig-4.jpg "Creando el Azure DB ")     
+![alt text](./Images/Fig-4.jpg "Creando el Azure DB ")     
     -   Account name: **polycosmos*[yourname]***
 
     -   Existing resource group: **PolyglotData**
@@ -107,11 +107,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  In the Keys pane, record the value of the **PRIMARY CONNECTION STRING** text box. 
 
     > **Note**: You'll use these values later in this lab.
-![alt text](images/Fig-6.jpg "Seleccionando primary connection string ") 
+![alt text](./Images/Fig-6.jpg "Seleccionando primary connection string ") 
 #### Task 4: Create an Azure Storage account resource
 
 1.  Create a new Azure Storage account with the following details:
-![alt text](images/Fig-7.jpg "Creando storage account ")     
+![alt text](./Images/Fig-7.jpg "Creando storage account ")     
     -   Storage account name: **polystor*[yourname]***
 
     -   Existing resource group: **PolyglotData**
@@ -127,7 +127,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     -   Access tier (default): **Hot**
 
     > **Note**: Wait for Azure to finish creating the storage account before you move forward with the lab. You'll receive a notification when the storage account is created.
-![alt text](images/Fig-8.jpg " ") 
+![alt text](./Images/Fig-8.jpg " ") 
 #### Review
 
 In this exercise, you created all the Azure resources that you'll need for a polyglot data solution.
@@ -135,7 +135,7 @@ In this exercise, you created all the Azure resources that you'll need for a pol
 ### Exercise 2: Import and validate data
 
 #### Task 1: Upload image blobs
-![alt text](images/Fig-9.jpg " ")
+![alt text](./Images/Fig-9.jpg " ")
 1.  Go to the blade for the **polystor*[yourname]*** Azure Storage account that you created earlier in this lab.
 
 1.  Open the Containers pane, and then create a new container with the following settings:
@@ -143,19 +143,19 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     -   Name: **images**
 
     -   Public access level: **Blob (anonymous read access for blobs only)**
-![alt text](images/Fig-9.jpg "Creando container para las imagenes ")
+![alt text](./Images/Fig-9.jpg "Creando container para las imagenes ")
 1.  Go to the new **images** container, and then open the Properties pane.
 
 1.  In the Properties pane, record the value in the **URL** text box.
 
     > **Note**: You'll use this value later in this lab.
-![alt text](images/Fig-10.jpg "Creando container para las imagenes ")
+![alt text](./Images/Fig-10.jpg "Creando container para las imagenes ")
 1.  Return to the blade for the **images** container.
 
 1.  Use the **Upload** button to upload the 42 individual **.jpg** image files in the **Allfiles (F):\\Allfiles\\Labs\\04\\Starter\\Images** folder on your lab machine.
 
     > **Note**: We recommended that you enable the **Overwrite if files already exist** option.
-![alt text](images/Fig-10.jpg "Subiendo las imagenes  en el container ")
+![alt text](./Images/Fig-10.jpg "Subiendo las imagenes  en el container ")
 #### Task 2: Upload an SQL .bacpac file
 
 1.  Go back to the blade for the **polystor*[yourname]*** Azure Storage account, and then open the Containers pane again.
@@ -165,17 +165,17 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     -   Name: **databases**
 
     -   Public access level: **Private (no anonymous access)**
-![alt text](images/Fig-11.jpg "Creando un nuevo container ")
+![alt text](./Images/Fig-11.jpg "Creando un nuevo container ")
 1.  Go to the new **databases** container.
-![alt text](images/Fig-10.jpg "Creando un nuevo container ")
+![alt text](./Images/Fig-10.jpg "Creando un nuevo container ")
 1.  Use the **Upload** button to upload the **AdventureWorks.bacpac** file in the **Allfiles (F):\\Allfiles\\Labs\\04\\Starter\\** folder on your lab machine.
 
     > **Note**: We recommended that you enable the **Overwrite if files already exist** option.
-![alt text](images/Fig-12.jpg "Creando un nuevo container ")
+![alt text](./Images/Fig-12.jpg "Creando un nuevo container ")
 #### Task 3: Import an SQL database
 
 1.  Go to the blade for the **polysqlsrvr*[yourname]*** SQL server resource that you created earlier in this lab.
-![alt text](images/Fig-13.jpg "Creando un nuevo container ")
+![alt text](./Images/Fig-13.jpg "Creando un nuevo container ")
 1.  Import the database from your Azure Storage account into the SQL server instance by using the following details:
 
     -   Storage account: **polystor*[yourname]***
@@ -183,25 +183,25 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     -   Database backup blob: **databases\AdventureWorks.bacpac**
 
     -   Database name: **AdventureWorks**
-![alt text](images/Fig-14.jpg "Importing database!! ")
+![alt text](./Images/Fig-14.jpg "Importing database!! ")
     -   Server admin login: **testuser**
 
     -   Password: **TestPa55w.rd**
 
     > **Note**: Wait for the database to be created before you continue with this lab. If you receive a firewall-related error on the import step, it means you did not correctly configure the **Allow Azure services to access server** setting on your SQL Server earlier in the lab.  Review your settings, delete the empty **AdventureWorks** database, and then attempt your import again.
-![alt text](images/Fig-16.jpg "Importing database!! ")
+![alt text](./Images/Fig-16.jpg "Importing database!! ")
 #### Task 4: Use an imported SQL database
 
 1.  Go back to the blade for the **polysqlsrvr*[yourname]*** SQL server resource.
-![alt text](images/Fig-17.jpg "Importing database!! ")
+![alt text](./Images/Fig-17.jpg "Importing database!! ")
 1.  Open the Firewalls and virtual networks pane.
 
 1.  Add your current client IP address to the list of allowed IP addresses, and then save the list.
 
 1.  Go to the blade for the **AdventureWorks** SQL database resource that you recently imported.
-![alt text](images/Fig-19.jpg "Mostrando la configuración de red!! ")
+![alt text](./Images/Fig-19.jpg "Mostrando la configuración de red!! ")
 1.  Open the Connection strings pane, and then record the value of the **ADO.NET (SQL Authentication)** connection string. 
-![alt text](images/Fig-20.jpg "Agregando el ip de la aplicación!! ")
+![alt text](./Images/Fig-20.jpg "Agregando el ip de la aplicación!! ")
 1.  Update the connection string that you recorded by replacing the placeholder values for *your_username* and *your_password*
 
     > **Note**: For example, if your connection string was originally ``Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID={your_username};Password={your_password};``, your updated connection string will be ``Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID=testuser;Password=TestPa55w.rd;``
@@ -221,7 +221,7 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     ```
 
     > **Note**: This query will return a list of models from the home page of the web application.
-![alt text](images/Fig-20.jpg "Ejecutando el query!! ")
+![alt text](./Images/Fig-20.jpg "Ejecutando el query!! ")
 1.  Run this additional query, and then observe the results:
 
     ```
@@ -229,7 +229,7 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     ```
 
     > **Note**: This query will return a list of products that are associated with each model.
-![alt text](images/Fig-21.jpg "Ejecutando y mostrando el resultado de la query!! ")
+![alt text](./Images/Fig-21.jpg "Ejecutando y mostrando el resultado de la query!! ")
 #### Review
 
 In this exercise, you imported all the resources that you'll use with your web application.
@@ -337,29 +337,29 @@ In this exercise, you configured your ASP.NET web application to connect to your
     ```
     cd .\AdventureWorks.Migrate\
     ```
-![alt text](images/Fig-Ejera.jpg "Cambiando  la ubicación del proyecto !! ")
+![alt text](./Images/Fig-Ejera.jpg "Cambiando  la ubicación del proyecto !! ")
 1.  Using the same terminal, import version 3.0.1 of **Microsoft.EntityFrameworkCore.SqlServer** from NuGet:
 
     ```
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.1
     ```
-![alt text](images/Fig-Ejer.jpg "Ejecutando y mostrando como agregar el paquete!! ")
+![alt text](./Images/Fig-Ejer.jpg "Ejecutando y mostrando como agregar el paquete!! ")
     > **Note**: The **dotnet add package** command will add the **Microsoft.EntityFrameworkCore.SqlServer** package from **NuGet**. For more information, go to: [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.0.1).
 
 1.  Using the same terminal, import version 3.4.1 of **Microsoft.Azure.Cosmos** from NuGet:
-![alt text](images/Fig-Ejera.jpg "Importing data to the proyecto !! ")
+![alt text](./Images/Fig-Ejera.jpg "Importing data to the proyecto !! ")
     ```
     dotnet add package Microsoft.Azure.Cosmos --version 3.4.1
     ```
 
     > **Note**: The **dotnet add package** command will add the **Microsoft.Azure.Cosmos** package from **NuGet**. For more information, go to: [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.4.1).
-(images/Fig-Ejerb.jpg "Building the proyecto !! ")
+(./Images/Fig-Ejerb.jpg "Building the proyecto !! ")
 1.  Using the same terminal, build the .NET console application:
 Fig-Ejerc.jpg "Importing data to the proyecto !! ")
     ```
     dotnet build
     ```
-![alt text](images/Fig-Ejerb.jpg "Building the project !! ")
+![alt text](./Images/Fig-Ejerb.jpg "Building the project !! ")
 1.  Close the current terminal.
 
 #### Task 2: Create a .NET class 
@@ -538,7 +538,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
     ```
     dotnet build
     ```
-![alt text](images/Fig-Ejerb.jpg "Building the project !! ")
+![alt text](./Images/Fig-Ejerb.jpg "Building the project !! ")
 1.  Close the current terminal.
 
 #### Task 2: Write .NET code to connect to Azure Cosmos DB
@@ -718,7 +718,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 1.  In the open browser window, browse to the web application that's hosted at **localhost** on port **5000**.
 
     > **Note**: The URL is <http://localhost:5000>.
-![alt text](images/Fig-Ejerg.jpg "Mostrando la aplicaciñon del proyecto !! ")
+![alt text](./Images/Fig-Ejerg.jpg "Mostrando la aplicaciñon del proyecto !! ")
 1.  In the web application, observe the list of models displayed from the front page.
 
 1.  Find the **Touring-1000** model, and then select **View Details**.
@@ -742,7 +742,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection by us
 ### Exercise 6: Clean up your subscription
 
 #### Task 1: Open Azure Cloud Shell
-![alt text](images/Fig-Ejerb.jpg "Building the project !Mostrando el resultado! ")
+![alt text](./Images/Fig-Ejerb.jpg "Building the project !Mostrando el resultado! ")
 1.  In the Azure portal, select the **Cloud Shell** icon to open a new shell instance.
 
 1.  If Cloud Shell isn't already configured, configure the shell for Bash by using the default settings.
